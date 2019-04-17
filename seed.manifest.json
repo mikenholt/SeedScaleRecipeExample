@@ -1,0 +1,64 @@
+{
+  "seedVersion": "1.0.0",
+  "job": {
+    "name": "filemover",
+    "jobVersion": "1.0.0",
+    "packageVersion": "1.0.0",
+    "title": "File Mover",
+    "description": "moves a file",
+    "tags": [],
+    "maintainer": {
+      "name": "Raul Alvarado",
+      "organization": "AIS",
+      "email": "raul.alvarado@appliedis.com"
+    },
+    "timeout": 3600,
+    "interface": {
+      "command": "",
+      "inputs": {
+        "files": [
+          {
+            "name": "INPUT_FILE",
+            "required": true,
+            "mediaTypes": [
+              "text/plain"
+            ]
+          }
+        ]
+      },
+      "outputs": {
+        "files": [
+          {
+            "name": "tags",
+            "mediaType": "plain/text",
+            "multiple": true,
+            "pattern": "renamed.txt"
+          }
+        ],
+        "json": [
+          {
+            "name": "metadata",
+            "key": "metadata",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "resources": {
+      "scalar": [
+        {
+          "name": "cpus",
+          "value": 1
+        },
+        {
+          "name": "mem",
+          "value": 1024
+        },
+        {
+          "name": "sharedMem",
+          "value": 1024
+        }
+      ]
+    }
+  }
+}

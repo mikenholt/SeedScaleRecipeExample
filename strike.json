@@ -1,0 +1,19 @@
+{
+    "title": "Pounce Strike",
+    "name" : "pounce",
+    "description": "test",
+    "configuration": {
+        "workspace": "mouse-nest",
+        "monitor": {
+            "type": "dir-watcher",
+            "transfer_suffix": "_tmp"
+        },
+        "files_to_ingest": [{
+            "filename_regex": ".*txt"
+        }],
+        "recipe": {
+            "name": "my-recipe",
+            "revision_num": 1
+        }
+    }
+}

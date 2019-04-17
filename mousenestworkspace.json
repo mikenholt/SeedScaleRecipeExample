@@ -1,0 +1,12 @@
+{
+    "title": "Mouse Nest",
+    "description": "Where all the mice play",
+    "base_url": "",
+    "is_active": true,
+    "configuration": {
+        "broker": {
+            "type": "host",
+            "host_path": "/dfs/mousehunt/mousenest"
+        }
+    }
+}

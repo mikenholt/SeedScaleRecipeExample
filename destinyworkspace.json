@@ -1,0 +1,12 @@
+{
+    "title": "Mouse Destiny",
+    "description": "Where mice discover their destiny",
+    "base_url": "",
+    "is_active": true,
+    "configuration": {
+        "broker": {
+            "type": "host",
+            "host_path": "/dfs/mousehunt/mouseresults"
+        }
+    }
+}
