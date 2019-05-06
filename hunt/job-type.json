@@ -1,0 +1,84 @@
+{
+    "icon_code": "f6be",
+    "docker_image": "fizz11/hunt-1.0.0-seed:1.0.0",
+    "configuration": {
+        "output_workspaces": {
+            "default": "mouse-destiny",
+            "outputs": {}
+        },
+        "settings": {}
+    },
+    "manifest": {
+        "seedVersion": "1.0.0",
+        "job": {
+            "name": "hunt",
+            "jobVersion": "1.0.0",
+            "packageVersion": "1.0.0",
+            "title": "Hunt",
+            "description": "The mouse got away...",
+            "tags": [],
+            "maintainer": {
+                "name": "Raul Alvarado",
+                "organization": "AIS",
+                "email": "raul.alvarado@appliedis.com"
+            },
+            "timeout": 3600,
+            "interface": {
+                "command": "",
+                "inputs": {
+                    "files":[],
+                    "json": [
+                        {
+                            "name": "INCOMING_MOUSE_NUMBER",
+                            "type": "string",
+                            "required": true
+                        }
+                    ]
+                },
+                "outputs": {
+                    "files": [
+                        {
+                            "name": "results",
+                            "multiple": true,
+                            "pattern": "*.txt",
+                            "required": true
+                        }
+                    ],
+                    "json": [
+                        {
+                            "name": "HUNTS",
+                            "key": "HUNTS",
+                            "type": "integer"
+                        },
+                        {
+                            "name": "FEASTS",
+                            "key": "FEASTS",
+                            "type": "integer"
+                        },
+                        {
+                            "name": "MOUSE_NUMBER",
+                            "key": "MOUSE_NUMBER",
+                            "type": "string"
+                        }
+                    ]
+                }
+            },
+            "resources": {
+                "scalar": [
+                    {
+                        "name": "cpus",
+                        "value": 1
+                    },
+                    {
+                        "name": "mem",
+                        "value": 1024
+                    },
+                    {
+                        "name": "sharedMem",
+                        "value": 1024
+                    }
+                ]
+            }
+        }
+    }
+}

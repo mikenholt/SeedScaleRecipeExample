@@ -1,6 +1,6 @@
 FROM alpine
 
-COPY  rename.sh /rename.sh
-RUN chmod 776 /rename.sh
+COPY  pounce.sh /pounce.sh
+RUN chmod 776 /pounce.sh
 
-ENTRYPOINT [ "sh", "/rename.sh"]
+ENTRYPOINT [ "sh", "/pounce.sh"]

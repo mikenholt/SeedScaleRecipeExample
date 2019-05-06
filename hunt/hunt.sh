@@ -2,13 +2,24 @@
 n=$((RANDOM%4))
 hunts=0
 feasts=0
-for (( c=0; c<$n; c++ ))
-do  
-    if $((RANDOM%2)):
-        "hunting..." > ${OUTPUT_DIR}/hunt$c.txt
-        hunts=hunts+1
+c=0
+echo "stuff"
+while [ $c -lt $n ]; do
+#for (( c=0; c<$n; c++ ))
+#do  
+    echo "in loop"
+    r=$((RANDOM%2))
+    if [ $r = 1 ]
+    then
+        echo "hunting"
+        echo "hunting..." > ${OUTPUT_DIR}/hunt$c.txt
+        hunts=$(( hunts + 1 ))
     else
-        "feasting..." > ${OUTPUT_DIR}/feast$c.txt
-        feasts=feasts+1
+        echo "feasting"
+        echo "feasting..." > ${OUTPUT_DIR}/feast$c.txt
+        feasts=$(( feasts + 1 ))
+    fi
+    c=$(( c + 1 ))
 done
-echo {\"hunts\": ${hunts},\"feasts\": ${feasts}, \"mouse\":${mouse}} > ${OUTPUT_DIR}/seed.outputs.json
+
+echo {\"HUNTS\": ${hunts},\"FEASTS\": ${feasts}, \"MOUSE_NUMBER\": \"${INCOMING_MOUSE_NUMBER}\"} > ${OUTPUT_DIR}/seed.outputs.json

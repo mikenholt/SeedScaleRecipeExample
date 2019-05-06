@@ -1,11 +1,11 @@
 {
   "seedVersion": "1.0.0",
   "job": {
-    "name": "filemover",
+    "name": "feast",
     "jobVersion": "1.0.0",
     "packageVersion": "1.0.0",
-    "title": "File Mover",
-    "description": "moves a file",
+    "title": "Feast",
+    "description": "The cat got hungry...",
     "tags": [],
     "maintainer": {
       "name": "Raul Alvarado",
@@ -16,29 +16,37 @@
     "interface": {
       "command": "",
       "inputs": {
-        "files": [
+        "json": [
           {
-            "name": "INPUT_FILE",
+            "name": "INCOMING_MOUSE_NUMBER",
             "required": true,
-            "mediaTypes": [
-              "text/plain"
-            ]
+            "type": "string"
           }
         ]
       },
       "outputs": {
         "files": [
           {
-            "name": "tags",
-            "mediaType": "plain/text",
+            "name": "results",
             "multiple": true,
-            "pattern": "renamed.txt"
+            "pattern": "*.txt",
+            "required": false
           }
         ],
         "json": [
           {
-            "name": "metadata",
-            "key": "metadata",
+            "name": "HUNTS",
+            "key": "HUNTS",
+            "type": "integer"
+          },
+          {
+            "name": "FEASTS",
+            "key": "FEASTS",
+            "type": "integer"
+          },
+          {
+            "name": "MOUSE_NUMBER",
+            "key": "MOUSE_NUMBER",
             "type": "string"
           }
         ]

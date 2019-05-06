@@ -1,0 +1,6 @@
+FROM alpine
+
+COPY  feast.sh /feast.sh
+RUN chmod 776 /feast.sh
+
+ENTRYPOINT [ "sh", "/feast.sh"]

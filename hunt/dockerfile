@@ -1,0 +1,6 @@
+FROM alpine
+
+COPY  hunt.sh /hunt.sh
+RUN chmod 776 /hunt.sh
+
+ENTRYPOINT [ "sh", "/hunt.sh"]
