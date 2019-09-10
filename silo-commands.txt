@@ -1,8 +1,8 @@
 curl -H "Content-Type: application/json" -d '{"username":"admin", "password": "admin"}' "scale-silo.marathon.l4lb.thisdcos.directory:9000/login" -v
 
-curl -H "Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VybmFtZSI6ImFkbWluIn0.OAK7h0FKjwpoarCJdiuQ9q2zKW7D4KiyseyQLwfO5A8" -H "Content-Type: application/json" -d '{"name":"fizz11", "url":"https://hub.docker.com", "org":"fizz11", "username":"", "password": ""}' scale-silo.marathon.l4lb.thisdcos.directory:9000/registries/add
+curl -H "Authorization: Token <REDACTED>" -H "Content-Type: application/json" -d '{"name":"fizz11", "url":"https://hub.docker.com", "org":"fizz11", "username":"", "password": ""}' scale-silo.marathon.l4lb.thisdcos.directory:9000/registries/add
 
 curl -X "GET" scale-silo.marathon.l4lb.thisdcos.directory:9000/registries/1
 
-curl -H "Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VybmFtZSI6ImFkbWluIn0.OAK7h0FKjwpoarCJdiuQ9q2zKW7D4KiyseyQLwfO5A8" -H "Content-Type: application/json" scale-silo.marathon.l4lb.thisdcos.directory:9000/registries/scan
+curl -H "Authorization: Token <REDACTED>" -H "Content-Type: application/json" scale-silo.marathon.l4lb.thisdcos.directory:9000/registries/scan
 
