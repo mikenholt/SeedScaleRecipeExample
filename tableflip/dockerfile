@@ -1,0 +1,6 @@
+FROM alpine
+
+COPY  flip.sh /flip.sh
+RUN chmod 776 /flip.sh
+
+ENTRYPOINT [ "sh", "/flip.sh"]

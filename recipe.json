@@ -1,0 +1,133 @@
+{
+    "input": {
+        "files": [
+            {
+                "name": "INPUT_FILE",
+                "media_types": [
+                    "image/tiff"
+                ],
+                "required": true,
+                "multiple": true
+            }
+        ],
+        "json": [
+            {
+                "name": "bar",
+                "type": "integer",
+                "required": false
+            }
+        ]
+    },
+    "nodes": {
+        "node_a": {
+            "dependencies": [],
+            "input": {
+                "input_1": {
+                    "type": "recipe",
+                    "input": "foo"
+                }
+            },
+            "node_type": {
+                "node_type": "job",
+                "job_type_name": "job-type-1",
+                "job_type_version": "1.0",
+                "job_type_revision": 1
+            }
+        },
+        "node_b": {
+            "dependencies": [
+                {
+                    "name": "node_a",
+                    "acceptance": true
+                }
+            ],
+            "input": {
+                "input_1": {
+                    "type": "recipe",
+                    "input": "foo"
+                },
+                "input_2": {
+                    "type": "dependency",
+                    "node": "node_a",
+                    "output": "output_1"
+                }
+            },
+            "node_type": {
+                "node_type": "job",
+                "job_type_name": "job-type-2",
+                "job_type_version": "2.0",
+                "job_type_revision": 1
+            }
+        },
+        "node_c": {
+            "dependencies": [
+                {
+                    "name": "node_b"
+                }
+            ],
+            "input": {
+                "input_1": {
+                    "type": "recipe",
+                    "input": "bar"
+                },
+                "input_2": {
+                    "type": "dependency",
+                    "node": "node_b",
+                    "output": "output_1"
+                }
+            },
+            "node_type": {
+                "node_type": "condition",
+                "interface": {
+                    "files": [
+                        {
+                            "name": "input_2",
+                            "media_types": [
+                                "image/tiff"
+                            ],
+                            "required": true,
+                            "multiple": true
+                        }
+                    ],
+                    "json": []
+                },
+                "data_filter": {
+                    "filters": [
+                        {
+                            "name": "input_2",
+                            "type": "media-type",
+                            "condition": "==",
+                            "values": [
+                                "image/tiff"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "node_d": {
+            "dependencies": [
+                {
+                    "name": "node_c",
+                    "acceptance": true
+                }
+            ],
+            "input": {
+                "input_1": {
+                    "type": "recipe",
+                    "input": "bar"
+                },
+                "input_2": {
+                    "type": "dependency",
+                    "node": "node_c",
+                    "output": "input_2"
+                }
+            },
+            "node_type": {
+                "node_type": "recipe",
+                "recipe_type_name": "recipe-type-1",
+                "recipe_type_revision": 5
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+  {
+      "seedVersion": "1.0.0",
+      "job": {
+          "name": "gpu-test",
+          "jobVersion": "1.0.0",
+          "packageVersion": "1.0.0",
+          "title": "GPU Test 2",
+          "description": "stresses GPU",
+          "maintainer": {
+              "name": "AIS",
+              "organization": "Applied Information Sciences",
+              "email": ""
+          },
+          "timeout": 3600,
+              "interface": {
+              "command": "nvidia-smi"
+          },
+          "resources":
+          {
+              "scalar": [
+                  { "name": "gpus", "value": 2.0 }
+              ]
+          }
+      }
+  }
+

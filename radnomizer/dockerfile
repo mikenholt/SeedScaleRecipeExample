@@ -1,0 +1,6 @@
+FROM alpine
+
+COPY  generatenumber.sh /generatenumber.sh
+RUN chmod 776 /generatenumber.sh
+
+ENTRYPOINT [ "sh", "/generatenumber.sh"]

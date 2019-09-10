@@ -1,0 +1,84 @@
+{
+  "icon_code": "f6be",
+  "docker_image": "fizz11/feast-1.0.0-seed:1.0.0",
+  "configuration": {
+    "output_workspaces": {
+     "default": "mouse-destiny",
+     "outputs" :{}
+    },
+    "settings": {
+    }
+  },
+  "manifest": {
+    "seedVersion": "1.0.0",
+    "job": {
+      "name": "feast",
+      "jobVersion": "1.0.0",
+      "packageVersion": "1.0.0",
+      "title": "Feast",
+      "description": "The cat got hungry...",
+      "tags": [],
+      "maintainer": {
+        "name": "Raul Alvarado",
+        "organization": "AIS",
+        "email": "raul.alvarado@appliedis.com"
+      },
+      "timeout": 3600,
+      "interface": {
+        "command": "",
+        "inputs": {
+          "json": [
+            {
+              "name": "INCOMING_MOUSE_NUMBER",
+              "required": true,
+              "type": "string"
+            }
+          ]
+        },
+        "outputs": {
+          "files": [
+            {
+              "name": "results",
+              "multiple": true,
+              "pattern": "*.txt",
+              "required": false
+            }
+          ],
+          "json": [
+            {
+              "name": "HUNTS",
+              "key": "HUNTS",
+              "type": "integer"
+            },
+            {
+              "name": "FEASTS",
+              "key": "FEASTS",
+              "type": "integer"
+            },
+            {
+              "name": "MOUSE_NUMBER",
+              "key": "MOUSE_NUMBER",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "resources": {
+        "scalar": [
+          {
+            "name": "cpus",
+            "value": 1
+          },
+          {
+            "name": "mem",
+            "value": 1024
+          },
+          {
+            "name": "sharedMem",
+            "value": 1024
+          }
+        ]
+      }
+    }
+  }
+}

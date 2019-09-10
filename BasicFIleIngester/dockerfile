@@ -1,0 +1,6 @@
+FROM alpine
+
+COPY  ingest.sh /ingest.sh
+RUN chmod 776 /ingest.sh
+
+ENTRYPOINT [ "sh", "/ingest.sh"]

@@ -1,0 +1,6 @@
+FROM alpine
+
+COPY  dance.sh /dance.sh
+RUN chmod 776 /dance.sh
+
+ENTRYPOINT [ "sh", "/dance.sh"]

@@ -1,0 +1,20 @@
+{
+  "seedVersion": "1.0.0",
+  "job": {
+    "name": "tableflip",
+    "jobVersion": "1.0.0",
+    "packageVersion": "1.0.0",
+    "title": "Table Flip",
+    "description": "anger management",
+    "tags": [
+      "fun",
+      "silly"
+    ],
+    "maintainer": {
+      "name": "Raul Alvarado",
+      "organization": "AIS",
+      "email": "raul.alvarado@appliedis.com"
+    },
+    "timeout": 3600
+  }
+}

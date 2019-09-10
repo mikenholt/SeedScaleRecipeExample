@@ -1,0 +1,39 @@
+{
+  "seedVersion": "1.0.0",
+  "job": {
+    "name": "basic-file-ingester-a",
+    "jobVersion": "1.0.0",
+    "packageVersion": "1.0.0",
+    "title": "Basic File Ingester A",
+    "description": "give it a file and see what it says...",
+    "maintainer": {
+      "name": "Raul Alvarado",
+      "organization": "AIS",
+      "email": "raul.alvarado@appliedis.com"
+    },
+    "timeout": 3600,
+    "interface": {
+      "command": "",
+      "inputs": {
+        "files": [
+          {
+            "name": "INPUT_FILE",
+            "required": true
+          }
+        ]
+      }
+    },
+    "resources": {
+      "scalar": [
+        {
+          "name": "cpus",
+          "value": 0.1
+        },
+        {
+          "name": "mem",
+          "value": 256
+        }
+      ]
+    }
+  }
+}

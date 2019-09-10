@@ -1,0 +1,48 @@
+{
+  "seedVersion": "1.0.0",
+  "job": {
+    "name": "rad-nomizer",
+    "jobVersion": "1.0.0",
+    "packageVersion": "1.0.0",
+    "title": "RAD - NOMIZER",
+    "description": "badly spelt randomizer will spit out true or false",
+    "tags": [
+      "testing",
+      "bad spelling"
+    ],
+    "maintainer": {
+      "name": "Raul Alvarado",
+      "organization": "AIS",
+      "email": "raul.alvarado@appliedis.com"
+    },
+    "timeout": 3600,
+    "interface": {
+      "command": "",
+      "outputs": {
+        "json": [
+          {
+            "name": "result",
+            "key": "RESULT",
+            "type": "boolean"
+          }
+        ]
+      }      
+    },
+    "resources": {
+      "scalar": [
+        {
+          "name": "cpus",
+          "value": 0.1
+        },
+        {
+          "name": "mem",
+          "value": 256
+        },
+        {
+          "name": "disk",
+          "value": 100
+        }
+      ]
+    }
+  }
+}
